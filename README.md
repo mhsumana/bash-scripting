@@ -12,6 +12,5 @@ This repository contains all the basics needed to learn BASH SCRIPTING and major
 
 ## How to open a folder on VScode with a command
 ...
-
     $ code folderName
 ...    
