@@ -5,7 +5,9 @@ This repository contains all the basics needed to learn BASH SCRIPTING and major
 ### How to push the code to git hub?
 
 ...
-    $ git add .                               // This will let the git to track all the files
+    $ git add .                               // This will let the git to track all the files.
+
     $ git commit -m "Updated the readMe file"
-    $ git push                             // This will push the code to the repository on the Github
+    
+    $ git push                               // This will push the code to the repository on the Github
 ....
