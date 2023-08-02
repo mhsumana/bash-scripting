@@ -7,3 +7,6 @@ echo Welcome to Bash Scripting
 
 # This is how we can execute the scripts
 # $ bash scriptName.sh  or  sh scriptName.sh  or  ./scriptName.sh
+
+echo Line1
+echo Line2
