@@ -22,4 +22,4 @@
   echo -e "\e[32m I am printing green color\e[0m"
   echo -e "\e[34m I am printing blue color\e[0m"
 
-  echo -e "\e[43,34m I am printing both color\e[0m"
+  echo -e "\e[43;34m I am printing both color\e[0m"
