@@ -18,4 +18,4 @@ echo -e "Line5\nLine6"
 # " "  : Double Quotes 
 # ' '  : Single Quotes
 
-echo -e "Serial no\n1\n2\nProduct\nPen\n\Pencil"
+echo -e "Line1\tLine2\nLine3\Line4"
