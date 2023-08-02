@@ -7,7 +7,7 @@ echo Welcome to Bash Scripting
 
 # \n : This indicates a new line
 
-echo -e Hi, \n How are you ?
+echo -e "Hi, \n How are you ?"
 
 echo Line1
 echo Line2
