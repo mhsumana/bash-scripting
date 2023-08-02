@@ -24,3 +24,13 @@ echo  "Printing the value of a : $a"     # $a   and    ${a} : both are same. Pre
 echo  "Print the value of a : ${a}"
 
 echo "Printing the value of x : $x" 
+#  x is not declared and we are attempting to print and it's not any going to report anything and it just shows null
+# DATA_DIR=robot
+# rm -rf   /data/${DATA_DIR}/  # rm -rf /data/       # rm -rf /data/robot/
+
+echo "Today's date is $DATE"
+
+# [ ]  : Square Branket 
+# ( )  : Paranthesis
+# { }  : Flower Brackets 
+
