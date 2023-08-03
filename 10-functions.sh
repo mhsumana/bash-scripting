@@ -25,9 +25,19 @@
 
 # sample
 
+Hi() {
+    echo "I am Hi function"
+    echo "I am here to say Hi"
+    echo "I am completed"
+}
+
 stat() {
     echo "Number of sessions opened is $(who| wc -l)"
     echo "Todays date is $(date +%F)"
+
+    Hi
 }
 stat
+
+
 
