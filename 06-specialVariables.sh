@@ -27,5 +27,5 @@ echo $?    # $? is going to print the exit code of the last command.
 echo $*    # $* is going to print the used arguments
 echo $@    # $* is going to print the used arguments
 
-# echo "Variables Used In The Script $*"    # $* is going to print the used variables  
+echo "Variables Used In The Script $*"    # $* is going to print the used variables  
 # echo "Variabels used are $@"              # $@ is going to print the used variables 
