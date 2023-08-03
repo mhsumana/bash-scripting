@@ -4,4 +4,4 @@ DATE=$(date +%F)
 echo "Todays date is $DATE "
 
 SESSIONS_COUNT=$(who | wc -l)
-echo "Total number od open sessions id $SESSIONS_COUNT "
+echo "Total number of open sessions is $SESSIONS_COUNT "
