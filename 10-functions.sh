@@ -17,11 +17,11 @@
 
 sample() {
     echo hi from sample function
-    wcho sample function is completed
+    echo sample function is completed
 }
 sample
 
-echo sample function is completed
+echo sample call is completed
 
 sample
 
