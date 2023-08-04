@@ -21,7 +21,7 @@ case $ACTION in
        echo -e "\e[33m Restart payment service\e[0m"
        ;;
     *)
-       echo -e "\e[35m Valid options are\e[0m start or stop or restart"
+       echo -e "\e[35m Valid options are\e[0m \e[32m start\e[0m or \e[31m stop\e[0m or \e[33m restart\e[0m"
        echo -e "\e[33m Example Usage\e[0m:\n \t bash scriptName start"
        ;;
 esac
