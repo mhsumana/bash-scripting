@@ -15,10 +15,10 @@ case $ACTION in
        echo -e "\e[32m Starting payment service\e[0m"
        ;;
     stop)
-       echo "Stopping payment service"
+       echo -e "\e[31m Stopping payment service\3[0m"
        ;;
     restart) 
-       echo "Restart payment service"
+       echo -e "\e[33m Restart payment service\e[0m"
        ;;
     *)
        echo "Valid options are start or stop or restart"
