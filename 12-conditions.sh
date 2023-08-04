@@ -22,7 +22,7 @@ case $ACTION in
        ;;
     *)
        echo "Valid options are start or stop or restart"
-       echo "Example Usgae:\n \t bash scriptName start"
+       echo -e "Example Usage:\n \t bash scriptName start"
        ;;
 esac
 
