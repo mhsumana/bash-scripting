@@ -17,7 +17,7 @@ case $ACTION in
     stop)
        echo "Stopping payment service"
        ;;
-    restart 
+    restart) 
        echo "Restart payment service"
        ;;
 esac
