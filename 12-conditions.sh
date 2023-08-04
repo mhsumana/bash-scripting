@@ -20,6 +20,10 @@ case $ACTION in
     restart) 
        echo "Restart payment service"
        ;;
+    *)
+       echo "Valid options are start or stop or restart"
+       echo "Example Usgae:\n \t bash scriptName start"
+       ;;
 esac
 
 
