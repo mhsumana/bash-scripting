@@ -10,7 +10,7 @@ if [ $USER_ID -ne 0 ]; then
 fi
 echo -e "\e[35m Configuring frontend\e[0m \n"
 
-echo "Installing Frontend:"
+echo -n "Installing Frontend:"
 yum install nginx -y &>> /tmp/frontend.log
 if [ $? -eq 0 ]; then
     echo -e "\e[32m success\e[0m"
