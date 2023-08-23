@@ -8,7 +8,9 @@ if [ $USER_ID -ne 0 ]; then
     echo -e "\e[31m Script is expected to be executed by the root user or with a sudo privilege\e[0m \n \t Example: sudo bash wrapper.sh frontend"
     exit 1 
 fi
-echo "Configuring frontend"
+echo -e "\e[35m Configuring frontend\e[0m \n"
+
+echo "Installing Frontend:"
 yum install nginx -y &>> /tmp/frontend.log
 
 
