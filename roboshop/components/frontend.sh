@@ -5,7 +5,7 @@
 USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]; then
-    echo -e "\e[31m Script is expected to be executed by the root user or with a sudo privilege\e[0m \n \t Example: sudo wrapper.sh frontend"
+    echo -e "\e[31m Script is expected to be executed by the root user or with a sudo privilege\e[0m \n \t Example: sudo bash wrapper.sh frontend"
     exit 1 
 fi
 echo "Configuring frontend"
