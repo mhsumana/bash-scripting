@@ -29,7 +29,7 @@ systemctl start nginx &>> /tmp/frontend.log
 stat $?
    
 
-echo "Downloading frontend component"
+echo -n "Downloading frontend component"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 stat $?
 
