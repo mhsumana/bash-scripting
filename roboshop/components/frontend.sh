@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Validate the user who is running the script is a root user or not.
 set -e 
+
+# Validate the user who is running the script is a root user or not.
+
 USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]; then
