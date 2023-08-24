@@ -17,7 +17,7 @@
 
 # sample() {
 #    echo hi from sample function
-#   echo sample function is completed
+#    echo sample function is completed
 # }
 # sample
 
