@@ -24,7 +24,7 @@ echo -e "\e[35m Configuring frontend\e[0m \n"
 
 echo -n "Installing Frontend :"
 yum install nginx -y &>> /tmp/frontend.log
-stat  $?
+stat 0 $?
 
 echo -n "Starting Nginx :"
 systemctl enable nginx &>> /tmp/frontend.log
