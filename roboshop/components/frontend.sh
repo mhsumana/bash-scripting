@@ -20,7 +20,7 @@ stat() {
     fi     
 }
 
-echo -e "\e[35m Configuring frontend\e[0m \n"
+echo -e "\e[35m Configuring frontend\e[0m"
 echo -n "Installing Frontend :"
 yum install nginx -y &>> /tmp/frontend.log
 stat $?
