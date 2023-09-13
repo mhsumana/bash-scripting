@@ -5,6 +5,8 @@ set -e
 # Validate the user who is running the script is a root user or not.
 
 USER_ID=$(id -u)
+COMPONENT=frontend
+LOGFILE="/tmp/${COMPONENT}.log"
 
 if [ $USER_ID -ne 0 ]; then
     echo -e "\e[31m Script is expected to be executed by the root user or with a sudo privilege\e[0m \n \t Example: sudo bash wrapper.sh frontend"
@@ -20,39 +22,39 @@ stat() {
     fi     
 }
 
-echo -e "\e[35m Configuring frontend\e[0m"
-echo -n "Installing Frontend :"
-yum install nginx -y &>> /tmp/frontend.log
+echo -e "\e[35m Configuring ${COMPONENT}\e[0m"
+echo -n "Installing ${COMPONENT} :"
+yum install nginx -y &>> ${LOGFILE}
 stat $?
 
 echo -n "Starting Nginx :"
-systemctl enable nginx &>> /tmp/frontend.log
-systemctl start nginx &>> /tmp/frontend.log
+systemctl enable nginx &>> ${LOGFILE}
+systemctl start nginx &>> ${LOGFILE}
 stat $?
    
-echo -n "Downloading frontend component"
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+echo -n "Downloading ${COMPONENT} component"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 stat $?
 
-echo -n "Cleanup of Frontend :"
+echo -n "Cleanup of ${COMPONENT} :"
 cd /usr/share/nginx/html
-rm -rf *   &>> /tmp/frontend.log
+rm -rf *   &>> ${LOGFILE}
 stat $?
 
-echo -n "Extracting Frontend :"
-unzip /tmp/frontend.zip  &>> /tmp/frontend.log
+echo -n "Extracting ${COMPONENT}:"
+unzip /tmp/${COMPONENT}.zip  &>> ${LOGFILE}
 stat $?
 
-echo -n "Sorting the frontend files :"
-mv frontend-main/* .  &>> /tmp/frontend.log
-mv static/* .         &>> /tmp/frontend.log  
-rm -rf frontend-main README.md  &>> /tmp/frontend.log
+echo -n "Sorting the ${COMPONENT} files :"
+mv ${COMPONENT}-main/* .  &>> ${LOGFILE}
+mv static/* .         &>> ${LOGFILE} 
+rm -rf ${COMPONENT}-main README.md  &>> ${LOGFILE}
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
-echo -n "Restarting the Frontend"
-systemctl daemon-reload  &>> /tmp/frontend.log
-systemctl restart nginx  &>> /tmp/frontend.log
+echo -n "Restarting the ${COMPONENT}"
+systemctl daemon-reload  &>> ${LOGFILE}
+systemctl restart nginx  &>> ${LOGFILE}
 stat $?
 
 
