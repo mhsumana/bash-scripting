@@ -47,13 +47,13 @@ stat $?
 
 echo -n "Extracting the ${COMPONENT} schema: "
 cd /tmp
-unzip ${COMPONENT}.zip
+unzip ${COMPONENT}.zip  &>> ${LOGFILE}
 stat $?
 
 echo -n "Injecting the ${COMPONENT} schema: "
 cd mongodb-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js  &>> ${LOGFILE}
+mongo < users.js      &>> ${LOGFILE}
 stat $?
 
 <<COMMENT
