@@ -24,7 +24,7 @@ stat() {
 
 echo -e "\e[35m Configuring ${COMPONENT}\e[0m"
 
-echo -n "Downloading the ${COMPONENT} repo: "
+echo -n "Configuring the ${COMPONENT} repo: "
 curl -s -o /etc/yum.repos.d/${COMPONENT}.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 stat $?
 
@@ -41,8 +41,20 @@ systemctl enable mongod
 systemctl start mongod
 stat $?
 
+echo -n "Downloading the ${COMPONENT} schema: "
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+stat $?
 
+echo -n "Extracting the ${COMPONENT} schema: "
+cd /tmp
+unzip ${COMPONENT}.zip
+stat $?
 
+echo -n "Injecting the ${COMPONENT} schema: "
+cd mongodb-main
+mongo < catalogue.js
+mongo < users.js
+stat $?
 
 <<COMMENT
 1. Install Mongo & Start Service.
@@ -51,7 +63,6 @@ stat $?
 # systemctl start mongod
 
 1. Update Listen IP address from 127.0.0.1 to 0.0.0.0 in the config file, so that MongoDB can be accessed by other services.
-
 Config file:   `# vim /etc/mongod.conf`
 
 # systemctl restart mongod
